@@ -1,0 +1,518 @@
+/* ==========================================
+   泽阳的科创主页 — 完整样式
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ========== 头部 ========== */
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 44px;
+    box-shadow: 0 8px 30px rgba(240, 147, 251, 0.4);
+}
+
+.hero-name {
+    font-size: 40px;
+    font-weight: 800;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero-tagline {
+    font-size: 17px;
+    margin-top: 8px;
+    opacity: 0.85;
+}
+
+/* ========== 介绍 ========== */
+.intro {
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin: 0 20px 50px;
+    text-align: center;
+}
+
+.intro-title {
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.intro-text {
+    font-size: 16px;
+    opacity: 0.92;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.intro-text strong {
+    background: linear-gradient(90deg, #ffd86f, #ff8a65);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========== 作品卡片 ========== */
+.projects {
+    padding: 0 20px 50px;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #2d3748;
+    border-radius: 18px;
+    padding: 30px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+}
+
+.card:nth-child(1)::before { background: linear-gradient(90deg, #43e97b, #38f9d7); }
+.card:nth-child(2)::before { background: linear-gradient(90deg, #fa709a, #fee140); }
+.card:nth-child(3)::before { background: linear-gradient(90deg, #a18cd1, #fbc2eb); }
+
+.card-icon {
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+    color: #fff;
+}
+
+.card-icon--green  { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.card-icon--pink   { background: linear-gradient(135deg, #fa709a, #fee140); }
+.card-icon--purple { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+
+.card-title {
+    font-size: 20px; font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 14px; color: #718096;
+    margin-bottom: 14px; line-height: 1.7;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px; font-weight: 600;
+}
+
+.card-tag--green  { background: #e6fffa; color: #319795; }
+.card-tag--pink   { background: #fff5f5; color: #e53e3e; }
+.card-tag--purple { background: #faf5ff; color: #805ad5; }
+
+/* ========== 按钮 ========== */
+.cta-wrapper {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 44px;
+    font-size: 18px; font-weight: 700;
+    color: #5a3fbf;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    background: #fefcbf;
+}
+
+.cta-arrow {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+/* ==========================================
+   项目展厅 — 气泡云
+   ========================================== */
+.bubble-hall {
+    padding: 20px 20px 80px;
+    text-align: center;
+    min-height: 500px;
+}
+
+.bubble-hall-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.bubble-hall-sub {
+    font-size: 15px;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.bubble-cloud {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+/* 单个气泡 */
+.bubble {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    animation: floatBubble 5s ease-in-out infinite;
+}
+
+.bubble:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+    z-index: 10;
+}
+
+.bubble-emoji {
+    font-size: 36px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.bubble-name {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* 每颗气泡不同颜色与浮动节奏 */
+.bubble--snake {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    left: 5%; top: 15%;
+    animation-delay: 0s;
+}
+
+.bubble--trash {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    left: 60%; top: 8%;
+    animation-delay: 1.2s;
+}
+
+.bubble--plant {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    left: 25%; top: 55%;
+    animation-delay: 2.4s;
+}
+
+.bubble--math {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    left: 58%; top: 55%;
+    animation-delay: 3.6s;
+}
+
+@keyframes floatBubble {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25%  { transform: translateY(-18px) rotate(2deg); }
+    50%  { transform: translateY(-8px) rotate(-1deg); }
+    75%  { transform: translateY(-22px) rotate(1deg); }
+}
+
+/* ==========================================
+   弹窗
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background: #fff;
+    color: #2d3748;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 680px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px 36px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px);
+    transition: transform 0.35s ease;
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px; right: 18px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #a0aec0;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #2d3748;
+}
+
+/* 弹窗内容 */
+.modal-project-icon {
+    font-size: 52px;
+    text-align: center;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.modal-project-title {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.modal-project-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.modal-project-desc {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* 代码块 */
+.modal-code-block {
+    background: #1a202c;
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-bottom: 24px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* 按钮组 */
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-run {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-run:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-run--primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+.btn-run--outline {
+    background: transparent;
+    color: #5a3fbf;
+    border: 2px solid #5a3fbf;
+}
+
+/* 游戏画布容器 */
+.game-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-container canvas {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: #1a202c;
+}
+
+.game-score {
+    font-size: 20px;
+    font-weight: 700;
+    color: #5a3fbf;
+    margin-bottom: 12px;
+}
+
+.game-hint {
+    font-size: 13px;
+    color: #a0aec0;
+    margin-top: 8px;
+}
+
+/* ========== 页脚 ========== */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 640px) {
+    .hero-name { font-size: 30px; }
+    .hero { padding: 40px 16px 30px; }
+    .intro { margin: 0 12px 36px; padding: 24px 20px; }
+    .card-grid { grid-template-columns: 1fr; }
+
+    .bubble-cloud { height: 350px; }
+    .bubble { width: 100px; height: 100px; font-size: 12px; }
+    .bubble-emoji { font-size: 28px; }
+
+    .modal { padding: 28px 20px; }
+}
+
+/* ========== 返回链接 ========== */
+.back-link {
+    display: inline-block;
+    padding: 20px 28px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+/* ========== 全屏展厅（projects.html） ========== */
+.bubble-hall--fullpage {
+    min-height: 75vh;
+    padding-top: 10px;
+}
+
+.bubble-hall--fullpage .bubble-cloud {
+    height: 500px;
+}
+
+
+
+    .nav-brand { font-size: 16px; }
+    .nav-link { font-size: 13px; padding: 6px 12px; }
+    .nav-en { display: none; }
+}

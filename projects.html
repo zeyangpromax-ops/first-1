@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目展厅 - 泽阳的科创主页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== 登录遮罩 ===== -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-card">
+            <div class="login-icon">🍥</div>
+            <h2 class="login-title">忍术卷轴 · 入口</h2>
+            <p class="login-sub">请输入暗号进入项目展厅</p>
+            <input type="text" id="loginUser" class="login-input" placeholder="用户名" autocomplete="off">
+            <input type="password" id="loginPass" class="login-input" placeholder="暗号">
+            <button id="loginBtn" class="login-btn">进入展厅</button>
+            <button id="faceLoginBtn" class="login-btn login-btn--face">🪞 面容登录</button>
+            <p id="loginError" class="login-error"></p>
+        </div>
+    </div>
+
+
+    <div id="mainContent" style="display:none"><a href="index.html" class="back-link">← 返回主页</a>
+
+    <section class="bubble-hall bubble-hall--fullpage">
+        <h2 class="bubble-hall-title">☁️ 项目展厅</h2>
+        <p class="bubble-hall-sub">戳一戳气泡，探索我的项目吧！</p>
+        
+    <div class="bubble-cloud" id="bubbleCloud"></div>
+
+    <!-- 上传按钮 -->
+    <div style="text-align:center;margin-top:30px">
+        <input type="file" id="pyFileInput" accept=".py" multiple style="display:none">
+        <button class="upload-btn" id="uploadBtn">📤 上传 .py 项目</button>
+    </div>
+    </section>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="projectModal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 泽阳 · 保持好奇，探索无限 ✨</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+    <script src="js/script.js"></script>
+</div></body>
+</html>

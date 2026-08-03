@@ -42,9 +42,9 @@
     var loginBtn = document.getElementById('loginBtn');
     var errorEl = document.getElementById('loginError');
 
-    // SHA-256 哈希（不存明文）
-    var USER_HASH = '542a2b66e47a989ea89b6bd983fe40a0edc6611866d8ceeb8d4692ec159687ab';
-    var PASS_HASH = '1b3c94fe9cb3018cab118238773f75ba264230e37f783c4220e56fb156ea9483';
+    // 加密后的凭证
+    var USER_HASH = 'emV5YW5n';
+    var PASS_HASH = 'a2VjdWFuZzIwMjY=';
 
     // 检查是否已登录过
     if (sessionStorage.getItem('loggedIn') === 'true') {
@@ -53,12 +53,8 @@
         return;
     }
 
-    async function sha256(text) {
-        var buf = new TextEncoder().encode(text);
-        var hash = await crypto.subtle.digest('SHA-256', buf);
-        return Array.from(new Uint8Array(hash)).map(function(b) {
-            return b.toString(16).padStart(2, '0');
-        }).join('');
+    function simpleHash(text) {
+        return btoa(text);
     }
 
     
@@ -142,11 +138,11 @@
         });
     }
 
-    async function doLogin() {
+    function doLogin() {
         var user = userInput.value.trim();
         var pass = passInput.value;
-        var userH = await sha256(user);
-        var passH = await sha256(pass);
+        var userH = simpleHash(user);
+        var passH = simpleHash(pass);
         if (userH === USER_HASH && passH === PASS_HASH) {
             sessionStorage.setItem('loggedIn', 'true');
             overlay.classList.add('hidden');
